@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trang chủ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script src="guard.js"></script>
+
+<nav>
+<a href="index.html">Trang chủ</a>
+<a href="logout.html">Đăng xuất</a>
+</nav>
+
+<div class="box">
+<h2>Xin chào 👋</h2>
+<p>Xin chào <b id="user"></b></p>
+</div>
+
+<script>
+document.getElementById("user").innerText =
+  localStorage.getItem("currentUser");
+</script>
+
+</body>
+</html>

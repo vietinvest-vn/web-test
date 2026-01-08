@@ -1,0 +1,30 @@
+body{
+  font-family:Arial;
+  background:#f4f6f9;
+  margin:0;
+}
+.box{
+  max-width:400px;
+  margin:80px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+input,button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+}
+button{
+  background:#0f8b8d;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+}
+a{text-decoration:none;color:#0f8b8d}
+nav{
+  background:#0f8b8d;
+  padding:10px;
+}
+nav a{color:#fff;margin-right:15px}
