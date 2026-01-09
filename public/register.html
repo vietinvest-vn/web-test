@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h2>ĐĂNG KÝ</h2>
+
+    <input id="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Mật khẩu" />
+
+    <select id="role">
+      <option value="customer">Khách hàng</option>
+      <option value="driver">Tài xế</option>
+    </select>
+
+    <button onclick="register()">Đăng ký</button>
+
+    <script type="module">
+      import { registerUser } from "../js/auth.js";
+
+      window.register = async () => {
+        await registerUser(email.value, password.value, role.value);
+      };
+    </script>
+  </body>
+</html>

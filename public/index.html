@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Khách hàng – Đặt xe</title>
+  </head>
+  <body>
+    <h2>ĐẶT XE</h2>
+
+    <input id="pickup" placeholder="Điểm đón" />
+    <input id="destination" placeholder="Điểm đến" />
+    <input id="price" placeholder="Giá" readonly value="50000" />
+
+    <button onclick="order()">Đặt xe</button>
+
+    <script type="module">
+      import { createRide } from "../js/customer.js";
+      import { auth } from "../js/firebase.js";
+
+      window.order = () => {
+        createRide(
+          auth.currentUser.uid,
+          pickup.value,
+          destination.value,
+          price.value
+        );
+      };
+    </script>
+  </body>
+</html>

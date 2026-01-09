@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <h2>ĐĂNG NHẬP</h2>
+
+    <input id="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Mật khẩu" />
+    <button onclick="login()">Đăng nhập</button>
+
+    <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+
+    <script type="module">
+      import { loginUser } from "../js/auth.js";
+
+      window.login = async () => {
+        const email = email.value;
+        const password = password.value;
+        await loginUser(email, password);
+      };
+    </script>
+  </body>
+</html>
