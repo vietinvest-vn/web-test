@@ -1,2 +1,5 @@
-<script src="auth.js"></script>
-<script>logout()</script>
+<script>
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("loginTime");
+  window.location.href = "login.html";
+</script>

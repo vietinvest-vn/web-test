@@ -1,3 +1,3 @@
-if(!localStorage.getItem("currentUser")){
-  location.href="login.html";
+if (!localStorage.getItem("currentUser")) {
+  window.location.href = "login.html";
 }

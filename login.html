@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Đăng nhập</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>🔐 Đăng nhập</h2>
+      <input id="username" placeholder="Tài khoản" />
+      <input id="password" type="password" placeholder="Mật khẩu" />
+      <button onclick="login()">Đăng nhập</button>
+      <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+    </div>
 
-<div class="box">
-<h2>Đăng nhập</h2>
-<input id="username" placeholder="Tài khoản">
-<input id="password" type="password" placeholder="Mật khẩu">
-<button onclick="login()">Đăng nhập</button>
-<p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
-</div>
-
-<script src="auth.js"></script>
-</body>
+    <script src="auth.js"></script>
+  </body>
 </html>

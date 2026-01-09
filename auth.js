@@ -1,42 +1,45 @@
-function getUsers(){
-  return JSON.parse(localStorage.getItem("users")) || [];
-}
-function saveUsers(users){
-  localStorage.setItem("users", JSON.stringify(users));
-}
-
 // ĐĂNG KÝ
-function register(){
-  let u = username.value.trim();
-  let p = password.value.trim();
+function register() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  if(!u || !p) return alert("Nhập đầy đủ");
+  if (!username || !password) {
+    alert("Vui lòng nhập đầy đủ!");
+    return;
+  }
 
-  let users = getUsers();
-  if(users.find(x=>x.username===u))
-    return alert("Tài khoản đã tồn tại");
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  users.push({username:u,password:p});
-  saveUsers(users);
-  alert("Đăng ký thành công");
-  location.href="login.html";
+  if (users.find((u) => u.username === username)) {
+    alert("Tài khoản đã tồn tại!");
+    return;
+  }
+
+  users.push({ username, password });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Đăng ký thành công!");
+  window.location.href = "login.html";
 }
 
 // ĐĂNG NHẬP
-function login(){
-  let u = username.value.trim();
-  let p = password.value.trim();
-  let users = getUsers();
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  let user = users.find(x=>x.username===u && x.password===p);
-  if(!user) return alert("Sai tài khoản hoặc mật khẩu");
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  localStorage.setItem("currentUser", u);
-  location.href="index.html";
-}
+  const user = users.find(
+    (u) => u.username === username && u.password === password
+  );
 
-// ĐĂNG XUẤT
-function logout(){
-  localStorage.removeItem("currentUser");
-  location.href="login.html";
+  if (!user) {
+    alert("Sai tài khoản hoặc mật khẩu!");
+    return;
+  }
+
+  localStorage.setItem("currentUser", user.username);
+  localStorage.setItem("loginTime", new Date().toLocaleString());
+
+  window.location.href = "index.html";
 }
