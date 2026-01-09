@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="guard.js"></script>
+
+    <nav>
+      <a href="index.html">← Quay lại</a>
+    </nav>
+
+    <div class="container box">
+      <h2>🛒 Giỏ hàng</h2>
+      <div id="list"></div>
+      <h3>Tổng: <span id="sum"></span></h3>
+      <button onclick="alert('Thanh toán thành công (giả lập)')">
+        Thanh toán
+      </button>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+      renderCart();
+    </script>
+  </body>
+</html>

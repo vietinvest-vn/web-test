@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Trang chủ</title>
+    <title>Đặt đồ ăn</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -10,21 +9,21 @@
 
     <nav>
       <a href="index.html">Trang chủ</a>
+      <a href="cart.html">Giỏ hàng</a>
       <a href="profile.html">Hồ sơ</a>
+      <a href="admin.html">Admin</a>
       <a href="logout.html">Đăng xuất</a>
     </nav>
 
-    <div class="box">
-      <h2>👋 Xin chào</h2>
-      <p>Xin chào <b id="user"></b></p>
-      <p>Đăng nhập lúc: <b id="time"></b></p>
+    <div class="container box">
+      <h2>🍔 Menu</h2>
+      <div id="foods" class="grid"></div>
     </div>
 
+    <script src="food.js"></script>
+    <script src="cart.js"></script>
     <script>
-      document.getElementById("user").innerText =
-        localStorage.getItem("currentUser");
-      document.getElementById("time").innerText =
-        localStorage.getItem("loginTime");
+      renderFoods();
     </script>
   </body>
 </html>

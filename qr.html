@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thanh toán VietQR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>💳 Thanh toán VietQR</h2>
+
+      <img id="qr" width="250" />
+
+      <p>Số tiền: <b id="money"></b> đ</p>
+      <p>Nội dung: <b id="note"></b></p>
+    </div>
+
+    <script>
+      const total = localStorage.getItem("orderTotal");
+      const note = "DONHANG_" + Date.now();
+
+      document.getElementById("money").innerText = total;
+      document.getElementById("note").innerText = note;
+
+      const bank = "ABB";
+      const stk = "1391029722025";
+      const name = "LO VAN VIET";
+
+      document.getElementById(
+        "qr"
+      ).src = `https://img.vietqr.io/image/${bank}-${stk}-compact2.png?amount=${total}&addInfo=${note}&accountName=${name}`;
+    </script>
+  </body>
+</html>

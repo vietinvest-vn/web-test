@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="guard.js"></script>
+    <script src="admin-guard.js"></script>
+
+    <nav>
+      <a href="index.html">Trang chủ</a>
+    </nav>
+
+    <div class="container box">
+      <h2>📊 Admin</h2>
+      <p>Tổng user: <b id="u"></b></p>
+    </div>
+    <h3>➕ Thêm món</h3>
+    <input id="name" placeholder="Tên món" />
+    <input id="price" placeholder="Giá" />
+    <button onclick="addFood()">Thêm</button>
+
+    <h3>📋 Danh sách</h3>
+    <div id="list"></div>
+
+    <script>
+      document.getElementById("u").innerText = (
+        JSON.parse(localStorage.getItem("users")) || []
+      ).length;
+    </script>
+  </body>
+</html>

@@ -1,14 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #f4f6f9;
   margin: 0;
 }
-
-/* NAV */
 nav {
   background: #0f8b8d;
   padding: 12px;
@@ -19,37 +16,31 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-nav a:hover {
-  text-decoration: underline;
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
 }
-
-/* BOX */
 .box {
-  max-width: 400px;
-  margin: 80px auto;
   background: #fff;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
-.box h2 {
-  text-align: center;
-  color: #0f8b8d;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
 }
-
-/* FORM */
-input,
+.food {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
 button {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin-top: 10px;
-  font-size: 15px;
-}
-input {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-button {
   background: #0f8b8d;
   color: #fff;
   border: none;
@@ -59,11 +50,8 @@ button {
 button:hover {
   background: #0a6f71;
 }
-
-p {
-  text-align: center;
-}
-a {
-  color: #0f8b8d;
-  text-decoration: none;
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }
